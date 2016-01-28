@@ -9,6 +9,8 @@
 - [Mongodb](https://www.mongodb.org)
 - [Mongoose](http://mongoosejs.com)
 
+Visit deployed version at https://jscalendar.herokuapp.com/#/
+
 ## Requirements
 
 - [Node 0.10.x](https://nodejs.org/en/download/)
