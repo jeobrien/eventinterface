@@ -22,12 +22,13 @@ angular.module('JSCalendar.calendar')
   };
 })
 
-.controller('EventInstanceCtrl', function ($scope, $uibModalInstance, items, Calendar) {
+.controller('EventInstanceCtrl', function ($rootScope, $scope, $uibModalInstance, items, Calendar) {
 
   $scope.ok = function () {
     Calendar.saveEvent($scope.newEvent).then(function (events) {
-      console.log(events, "EVENTS")
-      $scope.events = events;
+      $rootScope.$broadcast('new-events', {
+        events: events
+      });
     })
     .catch(function (err) {
       console.error(err);

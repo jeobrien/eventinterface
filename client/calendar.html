@@ -25,16 +25,19 @@
         </div>
     </script>
 
-    <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
+    <button type="button" id="newevent" class="btn btn-primary" ng-click="open()">New Event</button>
   </div>
 
-  <div ng-show='events.length' ng-repeat="event in events">
+  <div ng-show='events.length' ng-repeat="event in events" orderBy:'event.date'>
     <div class="panel panel-default">
-      <div class="panel-heading">{{event.occasion}}</div>
+      <div class="panel-heading">
+        {{event.occasion}}
+      </div>
       <div class="panel-body">
-        Date: {{event.day}}/{{event.month}}/{{event.year}}
+        Date: {{event.date}} / {{event.month}} / {{event.year}}
         <br>
         Attendees: {{event.invited_count}}
+        <button type="button" ng-click="deleteEvent(event.occasion)" class="btn btn-default delete">Delete Event</button>
       </div>
     </div>
   </div>

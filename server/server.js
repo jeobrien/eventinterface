@@ -10,7 +10,7 @@ var mongoose       = require('mongoose');
 // set our port
 var port = process.env.PORT || 3000;
 
-mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/events';
+mongoURI = process.env.MONGOLAB_URI || 'mongodb://mongodb://127.0.0.1:27017/events';
 
 // connect to our mongoDB database 
 mongoose.connect(mongoURI); 
@@ -35,7 +35,7 @@ require('./routes')(app); // configure our routes
 app.listen(port);               
 
 // shoutout to the user                     
-console.log('Magic happens on port ' + port);
+console.log('Magic happens on port ' + mongoURI);
 
 // expose app           
 exports = module.exports = app;                         

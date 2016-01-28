@@ -13,18 +13,27 @@ var mongoose = require('mongoose');
       });
     });
 
-    app.get('/api/delete', function (req, res) {
-      Event.find(function(err, events) {
+    app.post('/api/delete', function (req, res) {
+      console.log(req.body)
+      Event.find({occasion: req.body.title}).remove(function (err, data) {
         if (err) {
-          res.send(err);
+          res.json(err);
+        } else {
+          Event.find(function(err, events) {
+            if (err) {
+              res.send(err);
+            }
+            res.json(events);
+          });
         }
-        res.json(events);
       });
     });
 
     app.post('/api/events', function (req, res) {
       var event = new Event({
-        title: req.body
+        occasion: req.body.title,
+        invited_count: req.body.guests,
+        date: req.body.date
       });
       event.save(function (err, data) {
         if (err) {

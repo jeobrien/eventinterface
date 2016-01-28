@@ -1,13 +1,31 @@
 .full button span {
-    background-color: limegreen;
-    border-radius: 32px;
-    color: black;
-  }
-  .partially button span {
-    background-color: orange;
-    border-radius: 32px;
-    color: black;
-  }
+  background-color: #32CD32;
+  border-radius: 32px;
+  color: black;
+}
+.partially button span {
+  background-color: orange;
+  border-radius: 32px;
+  color: black;
+}
+
+#newevent {
+  margin: 15px;
+}
+
+.panel {
+  width: 450px; 
+  margin-left: 15px;
+}
+
+.delete {
+  display: inline-block;
+  margin-left: 300px;
+}
+
+h1 {
+  margin: 15px;
+}
 
 ul {
   list-style-type: none;

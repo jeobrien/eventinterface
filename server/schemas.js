@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 
 module.exports = new mongoose.Schema({
-  name: Object
+  occasion: String,
+  invited_count: Number,
+  date: Date
 });

@@ -15,11 +15,12 @@ angular.module('JSCalendar.services', [])
   };
   var deleteEvent = function (title) {
     return $http({
-      method: 'GET',
-      url: '/delete',
-      params: {
+      method: 'POST',
+      url: '/api/delete',
+      data: {
         title: title
-      }
+      },
+      headers: {'Content-Type': 'application/json'}
     })
     .then(function (resp) {
       return resp.data;
