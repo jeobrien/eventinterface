@@ -3,7 +3,7 @@
 
 ## Technologies Used
 
-- [Angular](http://backbonejs.org)
+- [Angular](http://angularjs.org)
 - [Node](https://nodejs.org/)
 - [Express](http://expressjs.com/)
 - [Mongodb](https://www.mongodb.org)

@@ -26,8 +26,9 @@ angular.module('JSCalendar.calendar', ['ui.bootstrap'])
     newEvents.forEach(function (event) {
       var date = new Date(event.date);
       var current = {
+        date: date,
         occasion: event.occasion,
-        date: date.getDate(),
+        day: date.getDate(),
         month: months[date.getMonth()],
         year: date.getFullYear(),
         invited_count: event.invited_count

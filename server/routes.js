@@ -14,7 +14,6 @@ var mongoose = require('mongoose');
     });
 
     app.post('/api/delete', function (req, res) {
-      console.log(req.body)
       Event.find({occasion: req.body.title}).remove(function (err, data) {
         if (err) {
           res.json(err);
@@ -48,5 +47,4 @@ var mongoose = require('mongoose');
         }
       });
     });
-
   };

@@ -12,7 +12,7 @@ var port = process.env.PORT || 3000;
 
 mongoURI = process.env.MONGOLAB_URI || 'mongodb://mongodb://127.0.0.1:27017/events';
 
-// connect to our mongoDB database 
+// connect to mongoDB database 
 mongoose.connect(mongoURI); 
 
 app.use(bodyParser.json()); 
@@ -21,21 +21,19 @@ app.use(bodyParser.json({ type: 'application/json' }));
 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-// override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
 app.use(methodOverride('X-HTTP-Method-Override')); 
 
-// set the static files location /public/img will be /img for users
+// set the static files location
 app.use(express.static(__dirname + '/../client'));
 
 // routes ==================================================
 require('./routes')(app); // configure our routes
 
 // start app ===============================================
-// startup our app at http://localhost:8080
+// startup app at http://localhost:8080
 app.listen(port);               
 
-// shoutout to the user                     
-console.log('Magic happens on port ' + mongoURI);
+console.log('Magic happens on port ' + port);
 
 // expose app           
 exports = module.exports = app;                         
