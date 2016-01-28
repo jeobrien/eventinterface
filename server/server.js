@@ -9,6 +9,7 @@ var mongoose       = require('mongoose');
 
 // set our port
 var port = process.env.PORT || 3000;
+
 mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost/events';
 
 // connect to our mongoDB database 
